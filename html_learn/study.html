@@ -1,19 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
 <body>
+    <form action="study.php" method="post">
+        <p>
+            <label for="name">姓名</label>
+            <input type="text" name="" id="name">
+        </p>
 
-    <h2>HTML Forms</h2>
+        <p>
+            <label for="number">座號</label>
+            <input type="number" name="" id="number">
+        </p>
 
-    <form action="/action_page.php">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value="John"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value="Doe"><br><br>
-        <input type="submit" value="Submit">
+        <p>
+            <label for="age">年齡</label>
+            <input type="number" name="" id="age">
+        </p>
+
+        <label for="select">班級</label>
+        <select name="" id="select">
+            <option value="1">在職班</option>
+            <option value="2">職前班</option>
+        </select>
+
+        <hr>
+        <p>興趣</p>
+
+        <label for="interest1">玩電腦</label>
+        <input type="radio" name="interest" id="interest1" value="吃飯">
+
+        <br>
+
+        <label for="interest2">睡覺</label>
+        <input type="radio" name="interest" id="interest2" value="睡覺">
+
+        <br>
+
+        <label for="interest3">看電視</label>
+        <input type="radio" name="interest" id="interest3" value="看電視">
+
+        <br>
+
+        <hr>
+
+        <p>才藝</p>
+
+        <label for="talent">唱歌</label>
+        <input type="checkbox" name="talent" id="talent1" value="唱歌">
+
+        <br>
+
+        <label for="talent">跳舞</label>
+        <input type="checkbox" name="talent" id="talent2" value="跳舞">
+
+        <br>
+
+        <label for="talent">彈鋼琴</label>
+        <input type="checkbox" name="talent" id="talent3" value="彈鋼琴">
+
+        <br>
+
+        <label for="talent">彈吉他</label>
+        <input type="checkbox" name="talent" id="talent3" value="彈吉他">
+
+        <br>
+
+        <label for="talent">吹嗩吶</label>
+        <input type="checkbox" name="talent" id="talent4" value="吹嗩吶">
+
+        <br>
+
+        <hr>
+
+        <input type="submit" value="提交">
+
     </form>
-
-    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 
 </body>
 
