@@ -31,7 +31,7 @@
 // 設定初始年分
 $year = "2024";
 // 設定月份
-$month = "9";
+$month = "4";
 // 查詢該月份第一天是星期幾 "第一周的第一天是星期幾"
 $firstweek_firstday_timestamp = strtotime("$year-$month-01"); //建立第一周第一天的時間戳
 $firstweek_firstday = date("w", $firstweek_firstday_timestamp);    // 使用date("w",$firstweek_firstday)來查詢該時間戳是對應星期幾
@@ -41,7 +41,7 @@ $days_in_month = date("t", $firstweek_firstday_timestamp);
 
 // 開始建立表格
 // 製作表頭
-echo "<h2>" . date("Y F", $firstweek_firstday_timestamp) . "</h2>";
+echo "<h2>" . date("Y年 n月", $firstweek_firstday_timestamp) . "</h2>";
 $str = "日 一 二 三 四 五 六";
 $header = explode(" ", $str);
 echo "<table>";
