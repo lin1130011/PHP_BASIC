@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        tr,
+        table {
+
+            border-collapse: collapse;
+            border: 3px blue solid;
+        }
+
         th,
         td {
             border: 1px solid;
@@ -113,44 +118,42 @@
     <?php
     $str = "日 一 二 三 四 五 六";
     $arr = explode(" ", $str);
-    $month = 4;
-    $firstDay = strtotime(date("Y-$month-01"));
-    // 第一周的開始是星期幾
-    $firstWeekStartDay = date("w", $firstDay);
-    // 最後一天
-    $days = date("t", $firstDay);
-    $lastDay = strtotime(date("Y-$month-$days"));
+    $year = "2024";
+    $month = 12;
+    $firstwekk_firstday = date("$year-$month-01");
+    $firstwekk_firstday_steamp =  strtotime($firstwekk_firstday);
+    $firstwekk_firstday = date("w", $firstwekk_firstday_steamp);
+    $days_in_month = date("t", $firstwekk_firstday_steamp);
+    $days_count = 1;
 
+    echo "<h2>" . date("Y年 : ") . "$month 月" . "</h2>";
     echo "<table>";
     echo "<tr>";
     foreach ($arr as $key => $value) {
-        echo "<th> $value </th>";
+        echo "<td>$value</td>";
     }
     echo "</tr>";
-    for ($i = 0; $i < 6; $i++) {
+
+    for ($i = 1; $i <= 6; $i++) {
         echo "<tr>";
-        for ($j = 0; $j < 7; $j++) {
-            if ($i == 0 && $j >= $firstWeekStartDay) {
-                echo "<td>";
-                echo    $i * 7 + $j - ($firstWeekStartDay - 1);
-                echo "</td>";
-            } else if ($i > 0) {
-                echo "<td>";
-                if ($i * 7 + $j - ($firstWeekStartDay - 1) <= $days) {
-                    echo $i * 7 + $j - ($firstWeekStartDay - 1);
-                } else {
-                    echo "&nbsp;";
-                }
-                echo "</td>";
+        for ($j = 1; $j <= 7; $j++) {
+            // ($j-1)的解釋為 根據表頭順序為日 一 二 三 四 五 然而$j也就是列數的排序是 1 2 3 4 5 6 7 然而$firstweek_firstday取得的內容為0~6(對應星期日到六) 所以須將列述減去1格確保起始點
+            // 或者修改迴圈條件for ($j = 0; $j < 7; $j++)
+            if ($i == 1 && ($j - 1) < $firstwekk_firstday) {
+                echo "<td> </td>";
             } else {
-                echo "<td></td>";
+                if ($days_count <= $days_in_month) {
+                    echo "<td>$days_count</td>";
+                    $days_count += 1;
+                } else {
+                    echo "<td>&nbsp;</td>";
+                }
             }
         }
         echo "</tr>";
     }
-
-
     ?>
+
 </body>
 
 </html>
