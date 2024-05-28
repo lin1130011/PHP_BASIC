@@ -35,3 +35,5 @@ foreach ($score as $sjb => $data) {
         }
     }
 }
+
+echo "test";
