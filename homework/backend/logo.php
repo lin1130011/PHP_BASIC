@@ -18,10 +18,15 @@
 
 <button onclick="op()">新增標題</button>
 
+<div id='show'></div>
+
 <script>
     function op() {
-        $.get("./api/insert.php", (data) => {
-            console.log('data', data);
+        // 使用 jQuery 的 AJAX 方法发送 GET 请求
+        $.get("./api/insert.php", function(data) {
+            $('#show').append(data)
+
+            $('#myModal').modal('show');
         })
     }
 </script>
