@@ -1,3 +1,6 @@
+<?php
+include_once "./api/base.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +28,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-light sticky-lg-top">
         <div class="container d-flex flex-column justify-content-center align-items-centert">
-            <div class="text-center">
+            <div class="text-center" id='logo-img'>
                 <img src="https://picsum.photos/100/100/?random=10">
             </div>
             <ul class="navbar-nav" id='nav1'>
@@ -45,7 +48,7 @@
         </div>
     </nav>
 
-    <div class="banner bg-danger" id='banner'>
+    <div class="banner" id='banner'>
 
 
     </div>

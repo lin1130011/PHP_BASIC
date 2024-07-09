@@ -1,0 +1,10 @@
+.fld {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    background: red;
+}
+
+legend {
+    text-align: center;
+}
